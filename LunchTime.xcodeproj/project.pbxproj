@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0AD56AA2B0BF5AA006B2AB4 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56A92B0BF5AA006B2AB4 /* MapClient.swift */; };
+		D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D482B082822009E4C0A /* LunchTimeApp.swift */; };
+		D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D4A2B082822009E4C0A /* ContentView.swift */; };
+		D0C15D4D2B082824009E4C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C15D4C2B082824009E4C0A /* Assets.xcassets */; };
+		D0C15D502B082824009E4C0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C15D4F2B082824009E4C0A /* Preview Assets.xcassets */; };
+		D0C15D5A2B082825009E4C0A /* LunchTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D592B082825009E4C0A /* LunchTimeTests.swift */; };
+		D0C15D732B082A30009E4C0A /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D722B082A30009E4C0A /* LocationClient.swift */; };
+		D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D742B082AAE009E4C0A /* ApiService.swift */; };
+		D0C15D772B082B96009E4C0A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D762B082B96009E4C0A /* Network.swift */; };
+		D0C15D7D2B083197009E4C0A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D7C2B083197009E4C0A /* Search.swift */; };
+		D0C15D7F2B083A37009E4C0A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D7E2B083A37009E4C0A /* Place.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0C15D562B082825009E4C0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C15D3D2B082822009E4C0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0C15D442B082822009E4C0A;
+			remoteInfo = LunchTime;
+		};
+		D0C15D602B082825009E4C0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0C15D3D2B082822009E4C0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0C15D442B082822009E4C0A;
+			remoteInfo = LunchTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0AD56A92B0BF5AA006B2AB4 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
+		D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D0C15D452B082822009E4C0A /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C15D482B082822009E4C0A /* LunchTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTimeApp.swift; sourceTree = "<group>"; };
+		D0C15D4A2B082822009E4C0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0C15D4C2B082824009E4C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0C15D4F2B082824009E4C0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0C15D552B082825009E4C0A /* LunchTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C15D592B082825009E4C0A /* LunchTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTimeTests.swift; sourceTree = "<group>"; };
+		D0C15D5F2B082825009E4C0A /* LunchTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C15D722B082A30009E4C0A /* LocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
+		D0C15D742B082AAE009E4C0A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		D0C15D762B082B96009E4C0A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D0C15D782B082D39009E4C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D0C15D7C2B083197009E4C0A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		D0C15D7E2B083A37009E4C0A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0C15D422B082822009E4C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C15D522B082825009E4C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C15D5C2B082825009E4C0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0C15D3C2B082822009E4C0A = {
+			isa = PBXGroup;
+			children = (
+				D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */,
+				D0C15D472B082822009E4C0A /* LunchTime */,
+				D0C15D582B082825009E4C0A /* LunchTimeTests */,
+				D0C15D462B082822009E4C0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0C15D462B082822009E4C0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D452B082822009E4C0A /* LunchTime.app */,
+				D0C15D552B082825009E4C0A /* LunchTimeTests.xctest */,
+				D0C15D5F2B082825009E4C0A /* LunchTimeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0C15D472B082822009E4C0A /* LunchTime */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D792B083031009E4C0A /* Models */,
+				D0C15D742B082AAE009E4C0A /* ApiService.swift */,
+				D0C15D762B082B96009E4C0A /* Network.swift */,
+				D0AD56A92B0BF5AA006B2AB4 /* MapClient.swift */,
+				D0C15D722B082A30009E4C0A /* LocationClient.swift */,
+				D0C15D482B082822009E4C0A /* LunchTimeApp.swift */,
+				D0C15D4A2B082822009E4C0A /* ContentView.swift */,
+				D0C15D4C2B082824009E4C0A /* Assets.xcassets */,
+				D0C15D782B082D39009E4C0A /* Info.plist */,
+				D0C15D4E2B082824009E4C0A /* Preview Content */,
+			);
+			path = LunchTime;
+			sourceTree = "<group>";
+		};
+		D0C15D4E2B082824009E4C0A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D4F2B082824009E4C0A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0C15D582B082825009E4C0A /* LunchTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D592B082825009E4C0A /* LunchTimeTests.swift */,
+			);
+			path = LunchTimeTests;
+			sourceTree = "<group>";
+		};
+		D0C15D792B083031009E4C0A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D7A2B083046009E4C0A /* Request */,
+				D0C15D7B2B08305A009E4C0A /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0C15D7A2B083046009E4C0A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D7C2B083197009E4C0A /* Search.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D0C15D7B2B08305A009E4C0A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D0C15D7E2B083A37009E4C0A /* Place.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0C15D442B082822009E4C0A /* LunchTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0C15D692B082825009E4C0A /* Build configuration list for PBXNativeTarget "LunchTime" */;
+			buildPhases = (
+				D0C15D412B082822009E4C0A /* Sources */,
+				D0C15D422B082822009E4C0A /* Frameworks */,
+				D0C15D432B082822009E4C0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LunchTime;
+			productName = LunchTime;
+			productReference = D0C15D452B082822009E4C0A /* LunchTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0C15D542B082825009E4C0A /* LunchTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0C15D6C2B082825009E4C0A /* Build configuration list for PBXNativeTarget "LunchTimeTests" */;
+			buildPhases = (
+				D0C15D512B082825009E4C0A /* Sources */,
+				D0C15D522B082825009E4C0A /* Frameworks */,
+				D0C15D532B082825009E4C0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0C15D572B082825009E4C0A /* PBXTargetDependency */,
+			);
+			name = LunchTimeTests;
+			productName = LunchTimeTests;
+			productReference = D0C15D552B082825009E4C0A /* LunchTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0C15D5E2B082825009E4C0A /* LunchTimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0C15D6F2B082825009E4C0A /* Build configuration list for PBXNativeTarget "LunchTimeUITests" */;
+			buildPhases = (
+				D0C15D5B2B082825009E4C0A /* Sources */,
+				D0C15D5C2B082825009E4C0A /* Frameworks */,
+				D0C15D5D2B082825009E4C0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0C15D612B082825009E4C0A /* PBXTargetDependency */,
+			);
+			name = LunchTimeUITests;
+			productName = LunchTimeUITests;
+			productReference = D0C15D5F2B082825009E4C0A /* LunchTimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0C15D3D2B082822009E4C0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D0C15D442B082822009E4C0A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					D0C15D542B082825009E4C0A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D0C15D442B082822009E4C0A;
+					};
+					D0C15D5E2B082825009E4C0A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D0C15D442B082822009E4C0A;
+					};
+				};
+			};
+			buildConfigurationList = D0C15D402B082822009E4C0A /* Build configuration list for PBXProject "LunchTime" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0C15D3C2B082822009E4C0A;
+			productRefGroup = D0C15D462B082822009E4C0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0C15D442B082822009E4C0A /* LunchTime */,
+				D0C15D542B082825009E4C0A /* LunchTimeTests */,
+				D0C15D5E2B082825009E4C0A /* LunchTimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0C15D432B082822009E4C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0C15D502B082824009E4C0A /* Preview Assets.xcassets in Resources */,
+				D0C15D4D2B082824009E4C0A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C15D532B082825009E4C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C15D5D2B082825009E4C0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0C15D412B082822009E4C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0C15D772B082B96009E4C0A /* Network.swift in Sources */,
+				D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */,
+				D0C15D732B082A30009E4C0A /* LocationClient.swift in Sources */,
+				D0C15D7D2B083197009E4C0A /* Search.swift in Sources */,
+				D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */,
+				D0C15D7F2B083A37009E4C0A /* Place.swift in Sources */,
+				D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */,
+				D0AD56AA2B0BF5AA006B2AB4 /* MapClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C15D512B082825009E4C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0C15D5A2B082825009E4C0A /* LunchTimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C15D5B2B082825009E4C0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0C15D572B082825009E4C0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0C15D442B082822009E4C0A /* LunchTime */;
+			targetProxy = D0C15D562B082825009E4C0A /* PBXContainerItemProxy */;
+		};
+		D0C15D612B082825009E4C0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0C15D442B082822009E4C0A /* LunchTime */;
+			targetProxy = D0C15D602B082825009E4C0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D0C15D672B082825009E4C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0C15D682B082825009E4C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0C15D6A2B082825009E4C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LunchTime/Preview Content\"";
+				DEVELOPMENT_TEAM = Q678CV3DLR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunchTime/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "LunchTime wants to know your current location to display restaurants near you";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshualeung.LunchTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0C15D6B2B082825009E4C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LunchTime/Preview Content\"";
+				DEVELOPMENT_TEAM = Q678CV3DLR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LunchTime/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "LunchTime wants to know your current location to display restaurants near you";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshualeung.LunchTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D0C15D6D2B082825009E4C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q678CV3DLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshualeung.LunchTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LunchTime.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LunchTime";
+			};
+			name = Debug;
+		};
+		D0C15D6E2B082825009E4C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q678CV3DLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshualeung.LunchTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LunchTime.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LunchTime";
+			};
+			name = Release;
+		};
+		D0C15D702B082825009E4C0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q678CV3DLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshualeung.LunchTimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LunchTime;
+			};
+			name = Debug;
+		};
+		D0C15D712B082825009E4C0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q678CV3DLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshualeung.LunchTimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LunchTime;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0C15D402B082822009E4C0A /* Build configuration list for PBXProject "LunchTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0C15D672B082825009E4C0A /* Debug */,
+				D0C15D682B082825009E4C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0C15D692B082825009E4C0A /* Build configuration list for PBXNativeTarget "LunchTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0C15D6A2B082825009E4C0A /* Debug */,
+				D0C15D6B2B082825009E4C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0C15D6C2B082825009E4C0A /* Build configuration list for PBXNativeTarget "LunchTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0C15D6D2B082825009E4C0A /* Debug */,
+				D0C15D6E2B082825009E4C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0C15D6F2B082825009E4C0A /* Build configuration list for PBXNativeTarget "LunchTimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0C15D702B082825009E4C0A /* Debug */,
+				D0C15D712B082825009E4C0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0C15D3D2B082822009E4C0A /* Project object */;
+}
