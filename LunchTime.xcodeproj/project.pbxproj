@@ -17,8 +17,6 @@
 		D0C15D732B082A30009E4C0A /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D722B082A30009E4C0A /* LocationClient.swift */; };
 		D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D742B082AAE009E4C0A /* ApiService.swift */; };
 		D0C15D772B082B96009E4C0A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D762B082B96009E4C0A /* Network.swift */; };
-		D0C15D7D2B083197009E4C0A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D7C2B083197009E4C0A /* Search.swift */; };
-		D0C15D7F2B083A37009E4C0A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D7E2B083A37009E4C0A /* Place.swift */; };
 		D0C15D7D2B083197009E4C0A /* SearchNearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D7C2B083197009E4C0A /* SearchNearby.swift */; };
 		D0C15D7F2B083A37009E4C0A /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D7E2B083A37009E4C0A /* Places.swift */; };
 /* End PBXBuildFile section */
@@ -56,8 +54,6 @@
 		D0C15D742B082AAE009E4C0A /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		D0C15D762B082B96009E4C0A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D0C15D782B082D39009E4C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		D0C15D7C2B083197009E4C0A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		D0C15D7E2B083A37009E4C0A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		D0C15D7C2B083197009E4C0A /* SearchNearby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNearby.swift; sourceTree = "<group>"; };
 		D0C15D7E2B083A37009E4C0A /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +149,6 @@
 		D0C15D7A2B083046009E4C0A /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				D0C15D7C2B083197009E4C0A /* Search.swift */,
 				D0C15D7C2B083197009E4C0A /* SearchNearby.swift */,
 			);
 			path = Request;
@@ -162,7 +157,6 @@
 		D0C15D7B2B08305A009E4C0A /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				D0C15D7E2B083A37009E4C0A /* Place.swift */,
 				D0C15D7E2B083A37009E4C0A /* Places.swift */,
 			);
 			path = Response;
@@ -302,7 +296,6 @@
 				D0AD56B32B115D77006B2AB4 /* ItemDetail.swift in Sources */,
 				D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */,
 				D0C15D732B082A30009E4C0A /* LocationClient.swift in Sources */,
-				D0C15D7D2B083197009E4C0A /* Search.swift in Sources */,
 				D0C15D7D2B083197009E4C0A /* SearchNearby.swift in Sources */,
 				D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */,
 				D0C15D7F2B083A37009E4C0A /* Places.swift in Sources */,
