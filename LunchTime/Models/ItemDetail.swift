@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct ItemDetail: Identifiable {
+struct ItemDetail: Identifiable, Hashable {
     var id: String
-    var itemImageUrl: String
+    var itemImageUrl: String?
     var name: String
     var rating: Float?
     var reviews: Int?
     var supportingText: String?
-    var bookmarked: Bool 
+    var bookmarked: Bool // TODO: Implement computed variable to check bookmark store
 }
 
 extension ItemDetail {
     static func make() -> ItemDetail {
         return ItemDetail(id: "000",
-                          itemImageUrl: "",
+                          itemImageUrl: nil,
                           name: "Little Original Joe's",
                           rating: 4.3,
                           reviews: 2300,

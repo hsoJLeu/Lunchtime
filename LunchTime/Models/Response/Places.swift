@@ -22,6 +22,7 @@ struct Place: Decodable, Identifiable {
     var userRatingCount: Int?
     var weekdayDescriptions: [String]?
     var googleMapsUri: String
+    var photos: [Photo]?
 
     var regularOpeningHours: OpeningHours?
     var currentOpeningHours: OpeningHours?
@@ -35,6 +36,10 @@ struct Place: Decodable, Identifiable {
 
     struct LocalizedText: Decodable {
         var text: String
+    }
+
+    struct Photo: Decodable {
+        var name: String? // Image resource URI
     }
 }
 
@@ -58,7 +63,7 @@ struct OpeningHours: Decodable {
 extension Place {
     func toWrapper() -> ItemDetail {
         return ItemDetail(id: self.id,
-                          itemImageUrl: "",
+                          itemImageUrl: self.photos?.first?.name,
                           name: self.displayName.text,
                           rating: self.rating,
                           reviews: 1200,

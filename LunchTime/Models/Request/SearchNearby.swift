@@ -26,3 +26,7 @@ struct Center: Encodable {
     var latitude: Double
     var longitude: Double
 }
+
+struct SearchTextRequest: Encodable {
+    var textQuery: String
+}
