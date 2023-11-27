@@ -9,7 +9,7 @@ import Foundation
 
 class ApiService {
     private let searchNearbyURL = "https://places.googleapis.com/v1/places:searchNearby"
-    private let textSearchURL = "https://places.googleapis.com/v1/places:textSearch"
+    private let searchTextURL = "https://places.googleapis.com/v1/places:searchText"
 
     private let network: Network
 
@@ -87,22 +87,40 @@ class ApiService {
     }
 
     func getNearbySearchRequest(locale: Center) async throws -> [Place] {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .withoutEscapingSlashes
+        guard let  encodedData = encode(model: SearchNearbyRequest(maxResultCount: 10,
+                                                                      locationRestriction: LocationRestriction(circle: Circle(center: locale, radius: 1000)))) else {
+            throw EncodingError.unableToEncodeModel
+        }
 
-        let encodedData = try encoder.encode(SearchNearbyRequest(maxResultCount: 10,
-                                                                locationRestriction: LocationRestriction(circle: Circle(center: locale, radius: 1000))))
-
-        guard let url = URL(string: placesURL) else { throw APIError.badURL }
+        guard let url = URL(string: searchNearbyURL) else { throw APIError.badURL }
         let request = buildRequest(with: encodedData, method: .post, url: url)
 
         let data = try await network.data(request: request)
 
-        let model = try? decode(data: data, model: Places.self)
+        let model = decode(data: data, model: Places.self)
         debugPrint(model)
         return model?.places ?? []
     }
 
+    func getTextSearchRequest(query: String) async throws -> [Place] {
+        guard let encodedData = encode(model: SearchTextRequest(textQuery: query)) else {
+            throw EncodingError.unableToEncodeModel
+        }
+
+        guard let url = URL(string: searchTextURL) else { throw APIError.badURL }
+        let request = buildRequest(with: encodedData, method: .post, url: url)
+
+        let data = try await network.data(request: request)
+
+        let model = decode(data: data, model: Places.self)
+        debugPrint(model)
+        return model?.places ?? []
+    }
+
+
+    enum EncodingError: Error {
+        case unableToEncodeModel
+    }
     enum APIError: Error {
         case badURL
     }
@@ -140,18 +158,29 @@ class ApiService {
             case id = "places.id"
             case location = "places.location"
             case photos = "places.photos"
-            case priceLevel = "places.priceLevel"
             case rating = "places.rating"
             case userRatingCount = "places.userRatingCount"
             case regularOpeningHours = "places.regularOpeningHours"
             case currentOpeningHours = "places.currentOpeningHours"
             case editorialSummary = "places.editorialSummary"
-//            places.viewport
         }
     }
 }
 
-public func decode< T: Decodable >(data: Data, model: T.Type) throws -> T? {
+public func encode< T: Encodable > (model: T) -> Data? {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .withoutEscapingSlashes
+
+    do {
+        return try encoder.encode(model)
+    } catch {
+        debugPrint("Unable to encode with error: \(error)")
+    }
+
+    return nil
+}
+
+public func decode< T: Decodable >(data: Data, model: T.Type) -> T? {
     let decoder = JSONDecoder()
     do {
         return try decoder.decode(model.self, from: data)
