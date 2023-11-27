@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0AD56B32B115D77006B2AB4 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B22B115D77006B2AB4 /* ItemDetail.swift */; };
+		D0AD56B42B11748F006B2AB4 /* RestaurantRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B12B115BE4006B2AB4 /* RestaurantRowItem.swift */; };
 		D0AD56B92B14C6AE006B2AB4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B82B14C6AE006B2AB4 /* Color+Extensions.swift */; };
 		D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D482B082822009E4C0A /* LunchTimeApp.swift */; };
 		D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D4A2B082822009E4C0A /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D0AD56B12B115BE4006B2AB4 /* RestaurantRowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowItem.swift; sourceTree = "<group>"; };
 		D0AD56B22B115D77006B2AB4 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		D0AD56B82B14C6AE006B2AB4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		D0C15D452B082822009E4C0A /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+				D0AD56B12B115BE4006B2AB4 /* RestaurantRowItem.swift */,
 		D0AD56B72B14C699006B2AB4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +310,7 @@
 				D0C15D7D2B083197009E4C0A /* SearchNearby.swift in Sources */,
 				D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */,
 				D0C15D7F2B083A37009E4C0A /* Places.swift in Sources */,
+				D0AD56B42B11748F006B2AB4 /* RestaurantRowItem.swift in Sources */,
 				D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */,
 				D0AD56B92B14C6AE006B2AB4 /* Color+Extensions.swift in Sources */,
 			);
