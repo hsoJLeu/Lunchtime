@@ -13,7 +13,7 @@
 		D0AD56B42B11748F006B2AB4 /* RestaurantRowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B12B115BE4006B2AB4 /* RestaurantRowItem.swift */; };
 		D0AD56B92B14C6AE006B2AB4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B82B14C6AE006B2AB4 /* Color+Extensions.swift */; };
 		D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D482B082822009E4C0A /* LunchTimeApp.swift */; };
-		D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D4A2B082822009E4C0A /* ContentView.swift */; };
+		D0C15D4B2B082822009E4C0A /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D4A2B082822009E4C0A /* RestaurantList.swift */; };
 		D0C15D4D2B082824009E4C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C15D4C2B082824009E4C0A /* Assets.xcassets */; };
 		D0C15D502B082824009E4C0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0C15D4F2B082824009E4C0A /* Preview Assets.xcassets */; };
 		D0C15D5A2B082825009E4C0A /* LunchTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D592B082825009E4C0A /* LunchTimeTests.swift */; };
@@ -50,7 +50,7 @@
 		D0AD56B82B14C6AE006B2AB4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		D0C15D452B082822009E4C0A /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C15D482B082822009E4C0A /* LunchTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchTimeApp.swift; sourceTree = "<group>"; };
-		D0C15D4A2B082822009E4C0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0C15D4A2B082822009E4C0A /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
 		D0C15D4C2B082824009E4C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0C15D4F2B082824009E4C0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0C15D552B082825009E4C0A /* LunchTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D0AD56AC2B0C1514006B2AB4 /* MapView.swift */,
+				D0C15D4A2B082822009E4C0A /* RestaurantList.swift */,
 				D0AD56B12B115BE4006B2AB4 /* RestaurantRowItem.swift */,
 			);
 			path = Views;
@@ -137,7 +138,6 @@
 				D0C15D722B082A30009E4C0A /* LocationClient.swift */,
 				D0AD56AE2B0C8735006B2AB4 /* MainViewModel.swift */,
 				D0C15D482B082822009E4C0A /* LunchTimeApp.swift */,
-				D0C15D4A2B082822009E4C0A /* ContentView.swift */,
 				D0C15D4C2B082824009E4C0A /* Assets.xcassets */,
 				D0C15D782B082D39009E4C0A /* Info.plist */,
 				D0C15D4E2B082824009E4C0A /* Preview Content */,
@@ -319,7 +319,7 @@
 			files = (
 				D0C15D772B082B96009E4C0A /* Network.swift in Sources */,
 				D0AD56B32B115D77006B2AB4 /* ItemDetail.swift in Sources */,
-				D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */,
+				D0C15D4B2B082822009E4C0A /* RestaurantList.swift in Sources */,
 				D0C15D732B082A30009E4C0A /* LocationClient.swift in Sources */,
 				D0C15D7D2B083197009E4C0A /* SearchNearby.swift in Sources */,
 				D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */,
