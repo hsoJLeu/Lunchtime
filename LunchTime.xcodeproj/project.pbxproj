@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0AD56AA2B0BF5AA006B2AB4 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56A92B0BF5AA006B2AB4 /* MapClient.swift */; };
 		D0AD56B32B115D77006B2AB4 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B22B115D77006B2AB4 /* ItemDetail.swift */; };
 		D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D482B082822009E4C0A /* LunchTimeApp.swift */; };
 		D0C15D4B2B082822009E4C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C15D4A2B082822009E4C0A /* ContentView.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D0AD56A92B0BF5AA006B2AB4 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
 		D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D0AD56B22B115D77006B2AB4 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		D0C15D452B082822009E4C0A /* LunchTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunchTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +107,6 @@
 				D0C15D792B083031009E4C0A /* Models */,
 				D0C15D742B082AAE009E4C0A /* ApiService.swift */,
 				D0C15D762B082B96009E4C0A /* Network.swift */,
-				D0AD56A92B0BF5AA006B2AB4 /* MapClient.swift */,
 				D0C15D722B082A30009E4C0A /* LocationClient.swift */,
 				D0C15D482B082822009E4C0A /* LunchTimeApp.swift */,
 				D0C15D4A2B082822009E4C0A /* ContentView.swift */,
@@ -300,7 +297,6 @@
 				D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */,
 				D0C15D7F2B083A37009E4C0A /* Places.swift in Sources */,
 				D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */,
-				D0AD56AA2B0BF5AA006B2AB4 /* MapClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
