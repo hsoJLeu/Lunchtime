@@ -65,7 +65,7 @@ struct RestaurantRowItem: View {
     }
 }
 
-struct ContentDetailView_Previews: PreviewProvider {
+struct RestaurantRowItem_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantRowItem(item: .make())
     }
