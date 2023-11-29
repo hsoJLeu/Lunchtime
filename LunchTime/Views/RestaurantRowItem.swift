@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RestaurantRowItem: View {
+    @EnvironmentObject var store: PlacesStore
+
     var item: ItemDetail
 
     var body: some View {
@@ -45,10 +47,14 @@ struct RestaurantRowItem: View {
                                 .foregroundColor(.black)
                             Spacer(minLength: 10)
                             Button {
-                                // TODO: Implement bookmark store
-                                debugPrint("Implement bookmark store")
+                                if store.contains(item) {
+                                    store.remove(item)
+                                } else {
+                                    store.add(item)
+                                }
+
                             } label: {
-                                item.bookmarked ?
+                                store.contains(item) ?
                                 Image(systemName: Constants.bookmarkFill.rawValue)
                                     .foregroundColor(.secondaryColor) :
                                 Image(systemName: Constants.bookmark.rawValue)
