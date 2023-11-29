@@ -8,29 +8,19 @@
 import SwiftUI
 
 struct RestaurantList: View {
-    @ObservedObject var viewModel: MainViewModel
+    @EnvironmentObject var viewModel: MainViewModel
 
     var body: some View {
-        NavigationStack {
-            List(viewModel.places) { item in
-                NavigationLink {
-                    // TODO: navigate to detail view
-                    Text("Implement detail view")
-                } label: {
-                    RestaurantRowItem(item: item.toWrapper())
-                }
-            }
+        List(viewModel.places) { item in
+            RestaurantRowItem(item: item.toWrapper())
         }
-//        .navigationDestination(for: ItemDetail.self) { item in
-//            ItemRow(item: item)
-//        }
-
+        .listStyle(.plain)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
 
     static var previews: some View {
-        RestaurantList(viewModel: MainViewModel())
+        RestaurantList().environmentObject(MainViewModel())
     }
 }
