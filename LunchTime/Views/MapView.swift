@@ -22,17 +22,23 @@ struct MapView: View {
                     RestaurantItem(item: place.toWrapper())
                         .foregroundColor(.black)
                         .frame(width: 300)
-                    // TODO: Replace with supplied asset
-                    Image(systemName: "pin")
+                    Image(uiImage: UIImage(named: Constants.pinSelected)!)
                 }
             }
         }
+    }
+
+    struct Constants {
+        static let pinSelected = "pin-selected"
+        static let pinResting = "pin-resting"
+
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MapView().environmentObject(MainViewModel())
+        MapView()
+            .environmentObject(MainViewModel())
     }
 }
