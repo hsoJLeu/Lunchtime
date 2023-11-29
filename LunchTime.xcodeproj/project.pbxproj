@@ -99,8 +99,19 @@
 			isa = PBXGroup;
 			children = (
 				D0087DAE2B177EAE0020E50C /* Store.swift */,
+				D0C15D722B082A30009E4C0A /* LocationClient.swift */,
+				D0C15D742B082AAE009E4C0A /* ApiService.swift */,
+				D0C15D762B082B96009E4C0A /* Network.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D0087DB32B1797DE0020E50C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0AD56AE2B0C8735006B2AB4 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D0AD56B02B0DD30C006B2AB4 /* Views */ = {
@@ -149,10 +160,7 @@
 				D0AD56B72B14C699006B2AB4 /* Extensions */,
 				D0C15D792B083031009E4C0A /* Models */,
 				D0AD56B02B0DD30C006B2AB4 /* Views */,
-				D0C15D742B082AAE009E4C0A /* ApiService.swift */,
-				D0C15D762B082B96009E4C0A /* Network.swift */,
-				D0C15D722B082A30009E4C0A /* LocationClient.swift */,
-				D0AD56AE2B0C8735006B2AB4 /* MainViewModel.swift */,
+				D0087DB32B1797DE0020E50C /* ViewModels */,
 				D0C15D482B082822009E4C0A /* LunchTimeApp.swift */,
 				D0C15D4C2B082824009E4C0A /* Assets.xcassets */,
 				D0C15D782B082D39009E4C0A /* Info.plist */,
