@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemDetail: Identifiable, Hashable {
+struct ItemDetail: Codable, Identifiable, Hashable {
     var id: String
     var itemImageUrl: String?
     var name: String
