@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RestaurantRowItem: View {
     @EnvironmentObject var store: PlacesStore
+    @EnvironmentObject var viewModel: MainViewModel
 
     var item: ItemDetail
 
@@ -28,10 +29,20 @@ struct RestaurantRowItem: View {
                             trailing: 1))
                 HStack {
                     // TODO: Replace with cached images
-                    if let imageUrl = item.itemImageUrl {
-                        AsyncImage(url: URL(string: imageUrl))
-                            .frame(width: 64,
-                                   height: 72)
+                    if let imageUrl = getBuiltImageUrl(item.itemImageUrl) {
+                        AsyncImage(url: URL(string: imageUrl)) { image in
+                            image
+                                .resizable()
+                                .padding(EdgeInsets(top: 0,
+                                                    leading: 10,
+                                                    bottom: 0,
+                                                    trailing: 0))
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 64,
+                               height: 72)
+                        .cornerRadius(10)
                     } else {
                         Image(systemName: Constants.forkKnife.rawValue)
                             .frame(width: 64,
@@ -95,6 +106,14 @@ struct RestaurantRowItem: View {
         case bookmark = "bookmark"
         case starFill = "star.fill"
         case forkKnife = "fork.knife"
+    }
+}
+
+extension RestaurantRowItem {
+    func getBuiltImageUrl(_ uri: String?) -> String? {
+        guard let uri = uri else { return nil }
+
+        return viewModel.getBuiltPhotoUrl(uri)
     }
 }
 
