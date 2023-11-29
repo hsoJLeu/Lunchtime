@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RestaurantRowItem: View {
+struct RestaurantItem: View {
     @EnvironmentObject var store: BookmarkStore
     @EnvironmentObject var viewModel: MainViewModel
 
@@ -20,7 +20,7 @@ struct RestaurantRowItem: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 16, style: .circular)
                     .fill(.white)
-                    .shadow(radius: 1, x: 0, y: 6)
+                    .shadow(radius: 2, x: 0, y: 6)
                     .padding(
                         EdgeInsets(
                             top: 1,
@@ -33,16 +33,12 @@ struct RestaurantRowItem: View {
                         AsyncImage(url: URL(string: imageUrl)) { image in
                             image
                                 .resizable()
-                                .padding(EdgeInsets(top: 0,
-                                                    leading: 10,
-                                                    bottom: 0,
-                                                    trailing: 0))
                         } placeholder: {
                             ProgressView()
                         }
                         .frame(width: 64,
                                height: 72)
-                        .cornerRadius(10)
+                        .cornerRadius(5)
                     } else {
                         Image(systemName: Constants.forkKnife.rawValue)
                             .frame(width: 64,
@@ -71,7 +67,11 @@ struct RestaurantRowItem: View {
                                 Image(systemName: Constants.bookmark.rawValue)
                                     .foregroundColor(.black)
                             }
-                        }.padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 10))
+                        }
+                        .padding(EdgeInsets(top: 5,
+                                             leading: 0,
+                                             bottom: 0,
+                                             trailing: 5))
 
                         HStack {
                             Image(systemName: Constants.starFill.rawValue)
@@ -90,14 +90,16 @@ struct RestaurantRowItem: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                             .lineLimit(2)
-                    }.padding(10)
-                }
-            }
-        }
-        .padding(EdgeInsets(top: 10,
+                    } // VStack
+
+                } // HStack container
+                .padding(10)
+            } // ZStack
+        } //
+        .padding(EdgeInsets(top: 5,
                             leading: 15,
                             bottom: 10,
-                            trailing: 15))
+                            trailing: 5))
         .listRowSeparator(.hidden)
     }
 
@@ -109,7 +111,7 @@ struct RestaurantRowItem: View {
     }
 }
 
-extension RestaurantRowItem {
+extension RestaurantItem {
     func getBuiltImageUrl(_ uri: String?) -> String? {
         guard let uri = uri else { return nil }
 
@@ -119,6 +121,6 @@ extension RestaurantRowItem {
 
 struct RestaurantRowItem_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantRowItem(item: .make())
+        RestaurantItem(item: .make())
     }
 }

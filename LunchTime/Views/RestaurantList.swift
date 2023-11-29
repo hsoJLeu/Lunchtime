@@ -12,7 +12,7 @@ struct RestaurantList: View {
 
     var body: some View {
         List(viewModel.places) { item in
-            RestaurantRowItem(item: item.toWrapper())
+            RestaurantItem(item: item.toWrapper())
         }
         .listStyle(.plain)
     }
