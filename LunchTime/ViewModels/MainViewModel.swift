@@ -22,7 +22,10 @@ class MainViewModel: ObservableObject {
     private var location: LocationClient
     private var api: ApiService
 
-    var currentLocation: MKCoordinateRegion = .init()
+    var currentLocation: MKCoordinateRegion = .init(center: CLLocationCoordinate2D(latitude: 35.65803908,
+                                                                                   longitude: +139.70590695),
+                                                    span: MKCoordinateSpan(latitudeDelta: 0.05,
+                                                                           longitudeDelta: 0.05))
 
     init(location: LocationClient = .shared, api: ApiService = .init()) {
         self.location = location

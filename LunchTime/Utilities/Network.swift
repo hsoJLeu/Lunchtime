@@ -15,16 +15,14 @@ class Network {
         session.configuration.requestCachePolicy = .returnCacheDataElseLoad
     }
 
-    func data(request: URLRequest) async throws-> Data {
+    func data(request: URLRequest) async throws -> Data {
         let (data, response) = try await session.data(for: request)
 
         let urlResponse = response as! HTTPURLResponse
-        debugPrint("Status code: \(urlResponse.statusCode)")
-        debugPrint("Data: \(String(describing: String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)))")
 
         if urlResponse.statusCode != 200 {
             if !data.isEmpty {
-                if let errModel = try decode(data: data, model: ErrorModel.self) {
+                if let errModel = decode(data: data, model: ErrorModel.self) {
                     print("\(urlResponse.statusCode)\n\(errModel.error.message)")
                 }
             }
