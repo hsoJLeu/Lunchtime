@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @EnvironmentObject var viewModel: MainViewModel
 
     var body: some View {
         Map(coordinateRegion: $viewModel.currentLocation,
@@ -20,7 +20,8 @@ struct MapView: View {
                                                              longitude: place.location.longitude)) {
                 VStack {
                     RestaurantRowItem(item: place.toWrapper())
-                        .frame(width: 250, height: 104)
+                        .foregroundColor(.black)
+                        .frame(width: 300)
                     // TODO: Replace with supplied asset
                     Image(systemName: "pin")
                 }
@@ -32,6 +33,6 @@ struct MapView: View {
 struct MapView_Previews: PreviewProvider {
     
     static var previews: some View {
-        MapView(viewModel: MainViewModel())
+        MapView().environmentObject(MainViewModel())
     }
 }
