@@ -70,4 +70,10 @@ class MainViewModel: ObservableObject {
             debugPrint("\(error)")
         }
     }
+
+    func getBuiltPhotoUrl(_ uri: String?) -> String? {
+        guard let uri = uri else { return nil }
+
+        return api.buildPlacePhotoRequest(placeUri: uri)?.absoluteString
+    }
 }
