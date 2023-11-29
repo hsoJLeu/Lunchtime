@@ -66,7 +66,7 @@ extension Place {
                           itemImageUrl: self.photos?.first?.name,
                           name: self.displayName.text,
                           rating: self.rating,
-                          reviews: 1200,
+                          reviews: self.userRatingCount,
                           supportingText: self.editorialSummary?.text,
                           bookmarked: false)
     }
