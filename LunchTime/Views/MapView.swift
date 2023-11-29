@@ -19,7 +19,7 @@ struct MapView: View {
             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.location.latitude,
                                                              longitude: place.location.longitude)) {
                 VStack {
-                    RestaurantRowItem(item: place.toWrapper())
+                    RestaurantItem(item: place.toWrapper())
                         .foregroundColor(.black)
                         .frame(width: 300)
                     // TODO: Replace with supplied asset
