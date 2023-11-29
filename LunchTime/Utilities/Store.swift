@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class PlacesStore: ObservableObject {
+class BookmarkStore: ObservableObject {
     @Published private var places: Set<ItemDetail> = []
 
     init() {

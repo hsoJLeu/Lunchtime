@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RestaurantRowItem: View {
-    @EnvironmentObject var store: PlacesStore
+    @EnvironmentObject var store: BookmarkStore
     @EnvironmentObject var viewModel: MainViewModel
 
     var item: ItemDetail
