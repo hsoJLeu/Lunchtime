@@ -10,6 +10,7 @@ import Foundation
 class ApiService {
     private let searchNearbyURL = "https://places.googleapis.com/v1/places:searchNearby"
     private let searchTextURL = "https://places.googleapis.com/v1/places:searchText"
+    private let baseURL = "https://places.googleapis.com/v1/"
 
     private let network: Network
 
@@ -78,7 +79,8 @@ class ApiService {
             .location,
             .rating,
             .userRatingCount,
-            .editorialSummary]
+            .editorialSummary,
+            .photos]
         setHTTPHeaders(maskTypes: masks,from: &request)
 
         debugPrint(request.description)
@@ -117,6 +119,27 @@ class ApiService {
         return model?.places ?? []
     }
 
+    func buildPlacePhotoRequest(placeUri: String) -> URL? {
+        guard let apiKey = getApiKey(from: Constants.apiKey) else {
+            debugPrint("Unable to retrieve api key. Please check api key")
+            return nil
+        }
+
+        let urlString = baseURL + placeUri + "/media"
+        guard let url = URL(string: urlString) else {
+            return nil
+        }
+        var request = URLRequest(url: url)
+
+        let queryItems = [URLQueryItem(name: Constants.maxHeightPx, value: "150"),
+                          URLQueryItem(name: Constants.maxWidthPx, value: "150"),
+                          URLQueryItem(name: Constants.key, value: apiKey)]
+        request.url?.append(queryItems: queryItems)
+
+        debugPrint("Built image URL: \(String(describing: request.url))")
+        return request.url
+
+    }
 
     enum EncodingError: Error {
         case unableToEncodeModel
@@ -128,7 +151,6 @@ class ApiService {
     private enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
-        case put = "PUT"
     }
 
     struct Constants {
@@ -138,6 +160,7 @@ class ApiService {
         static let appJson = "application/json"
         static let bearer = "Bearer"
         static let apiKey = "API_KEY"
+        static let key = "key"
         static let term = "term"
         static let limit = "limit"
         static let limitValue = "15"
@@ -145,9 +168,11 @@ class ApiService {
         static let bestMatch = "best_match"
         static let location = "location"
         static let locationValue = "Los Angeles"
+        static let maxHeightPx = "maxHeightPx"
+        static let maxWidthPx = "maxWidthPx"
 
 
-        enum FieldMasks:String {
+        enum FieldMasks: String {
             case accessibilityOptions = "places.accessibilityOptions"
             case addressComponents = "places.addressComponents"
             case businessStatus = "places.businessStatus"
