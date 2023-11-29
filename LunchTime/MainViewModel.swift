@@ -11,7 +11,7 @@ import MapKit
 @MainActor
 class MainViewModel: ObservableObject {
     @Published var searchQuery: String = ""
-    @Published var places: [Place] = Place.generateData(for: 10)
+    @Published var places: [Place] = []
     @Published var viewState: ViewState  = .list
 
     enum ViewState: Int {
@@ -35,6 +35,7 @@ class MainViewModel: ObservableObject {
             return
         }
 
+        objectWillChange.send()
         self.currentLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude,
                                                                                  longitude: location.coordinate.longitude),
                                                   span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
@@ -46,10 +47,10 @@ class MainViewModel: ObservableObject {
             let center = Center(latitude: location.latitude, longitude: location.longitude)
             let data = try await api.getNearbySearchRequest(locale: center)
 
-            DispatchQueue.main.async {
-                self.places = data
-            }
+            objectWillChange.send()
+            self.places = data
         } catch {
+            // TODO: Implement error handling
             print("\(error)")
         }
     }
@@ -58,16 +59,17 @@ class MainViewModel: ObservableObject {
         do {
             guard !searchQuery.isEmpty,
                   searchQuery.count >= 3 else {
-                debugPrint("Enter 3 or more characters to search")
+                // TODO: Implement error handling
+                print("Enter 3 or more characters to search")
                 return
             }
 
             let data  = try await api.getTextSearchRequest(query: searchQuery)
-            DispatchQueue.main.async {
-                self.places = data
-            }
+
+            self.places = data
         } catch {
-            debugPrint("\(error)")
+            // TODO: Implement error handling
+            print("\(error)")
         }
     }
 
