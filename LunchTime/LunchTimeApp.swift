@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct LunchTimeApp: App {
-    @StateObject var restaurantModel = MainViewModel()
-    @StateObject var bookmarks = PlacesStore()
+    @StateObject var viewModel = MainViewModel()
+    @StateObject var bookmarks = BookmarkStore()
 
     var body: some Scene {
         WindowGroup {
             ListMapScreen()
-                .environmentObject(restaurantModel)
+                .environmentObject(viewModel)
                 .environmentObject(bookmarks)
         }
     }
