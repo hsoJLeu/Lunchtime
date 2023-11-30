@@ -15,6 +15,7 @@ struct RestaurantItem: View {
 
     var body: some View {
         NavigationLink {
+            RestaurantDetailView(item: item)
         } label: {
             Button {
             } label: {
