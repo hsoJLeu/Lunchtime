@@ -22,7 +22,7 @@ class Network {
 
         if urlResponse.statusCode != 200 {
             if !data.isEmpty {
-                if let errModel = decode(data: data, model: ErrorModel.self) {
+                if let errModel = try decode(data: data, model: ErrorModel.self) {
                     print("\(urlResponse.statusCode)\n\(errModel.error.message)")
                 }
             }
