@@ -9,10 +9,14 @@ import SwiftUI
 
 struct RestaurantList: View {
     @EnvironmentObject var viewModel: MainViewModel
-
+    @State private var isPresented: Bool = false
     var body: some View {
         List(viewModel.places) { item in
-            RestaurantItem(item: item)
+            RestaurantItem(item: item,
+                           isPresented: $isPresented)
+            .sheet(isPresented: $isPresented) {
+                    RestaurantDetailView(item: item)
+            }
         }
         .listStyle(.plain)
     }
