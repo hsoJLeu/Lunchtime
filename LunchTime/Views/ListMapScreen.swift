@@ -20,6 +20,7 @@ struct ListMapScreen: View {
                     MapView()
                 }
 
+                // TODO: Put into 
                 Button {
                     if viewModel.viewState == .list {
                         viewModel.viewState = .map
@@ -45,18 +46,11 @@ struct ListMapScreen: View {
                     Image(uiImage: UIImage(named: Constants.atLogo)!)
                 }
             }
-            .onAppear {
-                viewModel.getCurrentLocation()
-
-                Task {
-                    await viewModel.getNearbyRestaurants()
-                }
-            }
-            .searchable(text: $viewModel.searchQuery, placement: .navigationBarDrawer(displayMode: .always))
-            .onSubmit(of: .search) {
-                Task {
-                    await viewModel.getTextSearch()
-                }
+        }
+        .searchable(text: $viewModel.searchQuery, placement: .navigationBarDrawer(displayMode: .automatic))
+        .onSubmit(of: .search) {
+            Task {
+                await viewModel.getTextSearch()
             }
         }
     }

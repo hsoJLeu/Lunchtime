@@ -17,6 +17,12 @@ struct LunchTimeApp: App {
             ListMapScreen()
                 .environmentObject(viewModel)
                 .environmentObject(bookmarks)
+                .onReceive(viewModel.$currentLocation) { _ in
+                    
+                    Task {
+                        await viewModel.getNearbyRestaurants()
+                    }
+                }
         }
     }
 }

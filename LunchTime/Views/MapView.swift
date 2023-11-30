@@ -12,9 +12,13 @@ struct MapView: View {
     @EnvironmentObject var viewModel: MainViewModel
     @State private var selectedPlace: Place?
     @State private var isPinSelected: Bool = false
+    @State private var localCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 44.96724,
+                                                                                                 longitude: -103.77156),
+                                                                                      span: MKCoordinateSpan(latitudeDelta: 20.0,
+                                                                                                             longitudeDelta: 20.0))
 
     var body: some View {
-        Map(coordinateRegion: $viewModel.currentLocation,
+        Map(coordinateRegion: $localCoordinateRegion,
             annotationItems: viewModel.places) { place in
 
             // TODO: Show item detail only on pin selected
@@ -42,6 +46,11 @@ struct MapView: View {
                 }
             }
         }
+            .onReceive(viewModel.$currentLocation) { _ in
+                if let coordinateRegion = viewModel.currentLocation {
+                    self.localCoordinateRegion = coordinateRegion
+                }
+            }
     }
 
     struct Constants {
@@ -52,7 +61,6 @@ struct MapView: View {
 }
 
 struct MapView_Previews: PreviewProvider {
-    
     static var previews: some View {
         MapView()
             .environmentObject(MainViewModel())
