@@ -8,11 +8,15 @@
 import Foundation
 import CoreLocation
 
-class LocationClient: NSObject, CLLocationManagerDelegate {
+class LocationClient: NSObject, ObservableObject, CLLocationManagerDelegate {
     static let shared = LocationClient()
 
     private let manager: CLLocationManager = .init()
-    var location: CLLocation?
+    @Published var location: CLLocation?
+    
+    private var locationDoesExist: Bool {
+        return location != nil
+    }
 
     private override init() {
         super.init()
@@ -28,13 +32,18 @@ class LocationClient: NSObject, CLLocationManagerDelegate {
         }
     }
 
+    func locationExists() -> Bool {
+        return locationDoesExist
+    }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         debugPrint("locations: \(locations)")
+        guard !locations.isEmpty else { return }
         self.location = locations.last
         self.manager.stopUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        debugPrint("Failed to update users location with error: \(error)")
+        print("Failed to update users location with error: \(error)")
     }
 }

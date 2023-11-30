@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import Combine
 
 @MainActor
 class MainViewModel: ObservableObject {
@@ -22,39 +23,46 @@ class MainViewModel: ObservableObject {
     private var location: LocationClient
     private var api: ApiService
 
-    var currentLocation: MKCoordinateRegion = .init(center: CLLocationCoordinate2D(latitude: 35.65803908,
-                                                                                   longitude: +139.70590695),
-                                                    span: MKCoordinateSpan(latitudeDelta: 0.05,
-                                                                           longitudeDelta: 0.05))
+    @Published var currentLocation: MKCoordinateRegion?
+    
+    private var cancellables = Set<AnyCancellable>()
 
     init(location: LocationClient = .shared, api: ApiService = .init()) {
         self.location = location
         self.api = api
+
+        setupLocationPublisher()
     }
 
-    func getCurrentLocation() {
-        guard let location = location.location else {
-            debugPrint("Location client does not have location data yet. Please try again")
-            return
-        }
-
-        objectWillChange.send()
-        self.currentLocation = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                                                                 longitude: location.coordinate.longitude),
-                                                  span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+    private func setupLocationPublisher() {
+        location.$location.sink { location in
+           if let coordinate = location?.coordinate {
+               let span = MKCoordinateSpan(latitudeDelta: 0.05,
+                                           longitudeDelta: 0.05)
+               let locationCoordinate = CLLocationCoordinate2D(latitude: coordinate.latitude,
+                                                       longitude: coordinate.longitude)
+               self.currentLocation = MKCoordinateRegion(center: locationCoordinate,
+                                                         span: span)
+           }
+        }.store(in: &cancellables)
     }
 
     func getNearbyRestaurants() async {
-        do {
-            let location = currentLocation.center
-            let center = Center(latitude: location.latitude, longitude: location.longitude)
-            let data = try await api.getNearbySearchRequest(locale: center)
-
-            objectWillChange.send()
-            self.places = data
-        } catch {
-            // TODO: Implement error handling
-            print("\(error)")
+        if location.locationExists() {
+            do {
+                if let location = location.location?.coordinate {
+                    let center = Center(latitude: location.latitude, longitude: location.longitude)
+                    let data = try await api.getNearbySearchRequest(locale: center)
+                    
+                    objectWillChange.send()
+                    self.places = data
+                }
+            } catch {
+                // TODO: Implement error handling
+                print("\(error)")
+            }
+        } else {
+            location.requestUserLocation()
         }
     }
 
