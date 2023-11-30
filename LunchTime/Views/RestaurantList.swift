@@ -9,16 +9,21 @@ import SwiftUI
 
 struct RestaurantList: View {
     @EnvironmentObject var viewModel: MainViewModel
-    @State private var isPresented: Bool = false
+    @State private var selectedPlace: Place?
+
+
     var body: some View {
-        List(viewModel.places) { item in
-            RestaurantItem(item: item,
-                           isPresented: $isPresented)
-            .sheet(isPresented: $isPresented) {
-                    RestaurantDetailView(item: item)
+        NavigationView {
+            List(viewModel.places) { item in
+                RestaurantItem(item: item,
+                               selectedPlace: $selectedPlace)
             }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
+        .sheet(item: $selectedPlace) { place in
+            RestaurantDetailView(item: place)
+        }
+
     }
 }
 
