@@ -12,7 +12,7 @@ struct RestaurantList: View {
 
     var body: some View {
         List(viewModel.places) { item in
-            RestaurantItem(item: item.toWrapper())
+            RestaurantItem(item: item)
         }
         .listStyle(.plain)
     }
@@ -21,6 +21,7 @@ struct RestaurantList: View {
 struct ContentView_Previews: PreviewProvider {
 
     static var previews: some View {
-        RestaurantList().environmentObject(MainViewModel())
+        RestaurantList()
+            .environmentObject(MainViewModel())
     }
 }

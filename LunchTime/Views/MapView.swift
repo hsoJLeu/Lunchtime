@@ -19,7 +19,7 @@ struct MapView: View {
             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.location.latitude,
                                                              longitude: place.location.longitude)) {
                 VStack {
-                    RestaurantItem(item: place.toWrapper())
+                    RestaurantItem(item: place)
                         .foregroundColor(.black)
                         .frame(width: 300)
                     Image(uiImage: UIImage(named: Constants.pinSelected)!)
