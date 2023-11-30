@@ -20,7 +20,9 @@ class ApiService {
 
     private func getApiKey(from key: String) -> String? {
         guard let value = Bundle.main.infoDictionary?[key] as? String else {
+            #if DEBUG
             print("Unable to retrieve key from infoDict. Please check key passed.")
+            #endif
             return nil
         }
 
@@ -56,7 +58,6 @@ class ApiService {
         component?.queryItems = items
 
         guard let returnUrl = component?.url else {
-            debugPrint("Unable to set query params to url. Please check url.")
             return nil
         }
         return returnUrl
@@ -81,15 +82,14 @@ class ApiService {
             .userRatingCount,
             .editorialSummary,
             .photos]
-        setHTTPHeaders(maskTypes: masks,from: &request)
 
-        debugPrint(request.description)
+        setHTTPHeaders(maskTypes: masks,from: &request)
 
         return request
     }
 
     func getNearbySearchRequest(locale: Center) async throws -> [Place] {
-        guard let  encodedData = encode(model: SearchNearbyRequest(maxResultCount: 10,
+        guard let  encodedData = try? encode(model: SearchNearbyRequest(maxResultCount: 10,
                                                                       locationRestriction: LocationRestriction(circle: Circle(center: locale, radius: 1000)))) else {
             throw EncodingError.unableToEncodeModel
         }
@@ -99,13 +99,12 @@ class ApiService {
 
         let data = try await network.data(request: request)
 
-        let model = decode(data: data, model: Places.self)
-        debugPrint(model)
+        let model = try decode(data: data, model: Places.self)
         return model?.places ?? []
     }
 
     func getTextSearchRequest(query: String) async throws -> [Place] {
-        guard let encodedData = encode(model: SearchTextRequest(textQuery: query)) else {
+        guard let encodedData = try? encode(model: SearchTextRequest(textQuery: query)) else {
             throw EncodingError.unableToEncodeModel
         }
 
@@ -114,14 +113,15 @@ class ApiService {
 
         let data = try await network.data(request: request)
 
-        let model = decode(data: data, model: Places.self)
-        debugPrint(model)
+        let model = try decode(data: data, model: Places.self)
         return model?.places ?? []
     }
 
     func buildPlacePhotoRequest(placeUri: String) -> URL? {
         guard let apiKey = getApiKey(from: Constants.apiKey) else {
-            debugPrint("Unable to retrieve api key. Please check api key")
+            #if DEBUG
+            print("Unable to retrieve api key. Please check api key")
+            #endif
             return nil
         }
 
@@ -131,14 +131,12 @@ class ApiService {
         }
         var request = URLRequest(url: url)
 
-        let queryItems = [URLQueryItem(name: Constants.maxHeightPx, value: "150"),
-                          URLQueryItem(name: Constants.maxWidthPx, value: "150"),
+        let queryItems = [URLQueryItem(name: Constants.maxHeightPx, value: "400"),
+                          URLQueryItem(name: Constants.maxWidthPx, value: "400"),
                           URLQueryItem(name: Constants.key, value: apiKey)]
         request.url?.append(queryItems: queryItems)
 
-        debugPrint("Built image URL: \(String(describing: request.url))")
         return request.url
-
     }
 
     enum EncodingError: Error {
@@ -171,7 +169,6 @@ class ApiService {
         static let maxHeightPx = "maxHeightPx"
         static let maxWidthPx = "maxWidthPx"
 
-
         enum FieldMasks: String {
             case accessibilityOptions = "places.accessibilityOptions"
             case addressComponents = "places.addressComponents"
@@ -192,25 +189,13 @@ class ApiService {
     }
 }
 
-public func encode< T: Encodable > (model: T) -> Data? {
+public func encode< T: Encodable > (model: T) throws -> Data? {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .withoutEscapingSlashes
-
-    do {
-        return try encoder.encode(model)
-    } catch {
-        debugPrint("Unable to encode with error: \(error)")
-    }
-
-    return nil
+    return try encoder.encode(model)
 }
 
-public func decode< T: Decodable >(data: Data, model: T.Type) -> T? {
+public func decode< T: Decodable >(data: Data, model: T.Type) throws -> T? {
     let decoder = JSONDecoder()
-    do {
-        return try decoder.decode(model.self, from: data)
-    } catch {
-        debugPrint("\(error)")
-    }
-    return nil
+    return try decoder.decode(model.self, from: data)
 }
