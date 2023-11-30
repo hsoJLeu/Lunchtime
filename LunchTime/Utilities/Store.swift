@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 class BookmarkStore: ObservableObject {
-    @Published private var places: Set<ItemDetail> = []
+    @Published private var places: Set<String> = []
 
     init() {
         Task {
@@ -25,21 +25,21 @@ class BookmarkStore: ObservableObject {
         .appendingPathComponent("places.data")
     }
 
-    func contains(_ place: ItemDetail) -> Bool {
-        return places.contains { $0.id == place.id }
+    func contains(_ placeId: String) -> Bool {
+        return places.contains { $0 == placeId }
     }
 
     func load() async throws {
-        let task = Task<[ItemDetail], Error> {
+        let task = Task<[String], Error> {
             let fileURL = try Self.fileURL()
             guard let data = try? Data(contentsOf: fileURL) else {
                 return []
             }
-            let places = try JSONDecoder().decode([ItemDetail].self, from: data)
+            let places = try JSONDecoder().decode([String].self, from: data)
             return places
         }
         let places = try await task.value
-
+        print(places)
         _ = places.map { item in
             self.places.insert(item)
         }
@@ -55,7 +55,7 @@ class BookmarkStore: ObservableObject {
         try await task.value
     }
 
-    func add(_ place: ItemDetail) {
+    func add(_ place: String) {
         objectWillChange.send()
         places.insert(place)
         Task {
@@ -63,7 +63,7 @@ class BookmarkStore: ObservableObject {
         }
     }
 
-    func remove(_ place: ItemDetail) {
+    func remove(_ place: String) {
         objectWillChange.send()
         places.remove(place)
         Task {

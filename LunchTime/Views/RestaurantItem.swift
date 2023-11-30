@@ -11,96 +11,89 @@ struct RestaurantItem: View {
     @EnvironmentObject var store: BookmarkStore
     @EnvironmentObject var viewModel: MainViewModel
 
-    var item: ItemDetail
+    var item: Place
 
     var body: some View {
-        Button {
-            
+        NavigationLink {
         } label: {
-            ZStack {
-                RoundedRectangle(cornerRadius: 16, style: .circular)
-                    .fill(.white)
-                    .shadow(radius: 2, x: 0, y: 6)
-                    .padding(
-                        EdgeInsets(
-                            top: 1,
-                            leading: 1,
-                            bottom: 1,
-                            trailing: 1))
-                HStack {
-                    // TODO: Replace with cached images
-                    if let imageUrl = getBuiltImageUrl(item.itemImageUrl) {
-                        AsyncImage(url: URL(string: imageUrl)) { image in
-                            image
-                                .resizable()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .frame(width: 64,
-                               height: 72)
-                        .cornerRadius(5)
-                    } else {
-                        Image(systemName: Constants.forkKnife.rawValue)
+            Button {
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 16, style: .circular)
+                        .fill(.white)
+                        .shadow(radius: 2, x: 0, y: 6)
+                        .padding(
+                            EdgeInsets(
+                                top: 1,
+                                leading: 1,
+                                bottom: 1,
+                                trailing: 1))
+                    HStack {
+                        // TODO: Replace with cached images
+                        if let imageUrl = getBuiltImageUrl(item.photos?.first?.name) {
+                            AsyncImage(url: URL(string: imageUrl)) { image in
+                                image
+                                    .resizable()
+                            } placeholder: {
+                                ProgressView()
+                            }
                             .frame(width: 64,
                                    height: 72)
-                    }
+                            .cornerRadius(5)
+                        } else {
+                            Image(systemName: Constants.forkKnife.rawValue)
+                                .frame(width: 64,
+                                       height: 72)
+                        }
 
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(item.name)
-                                .font(.title3)
-                                .lineLimit(1)
-                                .truncationMode(.tail)
-                                .foregroundColor(.black)
-                            Spacer(minLength: 10)
-                            Button {
-                                if store.contains(item) {
-                                    store.remove(item)
-                                } else {
-                                    store.add(item)
-                                }
-
-                            } label: {
-                                store.contains(item) ?
-                                Image(systemName: Constants.bookmarkFill.rawValue)
-                                    .foregroundColor(.secondaryColor) :
-                                Image(systemName: Constants.bookmark.rawValue)
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(item.displayName.text)
+                                    .font(.title3)
+                                    .lineLimit(1)
+                                    .truncationMode(.tail)
                                     .foregroundColor(.black)
+                                Spacer(minLength: 10)
+                                Button {
+                                    if store.contains(item.id) {
+                                        store.remove(item.id)
+                                    } else {
+                                        store.add(item.id)
+                                    }
+                                } label: {
+                                    store.contains(item.id) ?
+                                    Image(systemName: Constants.bookmarkFill.rawValue)
+                                        .foregroundColor(.secondaryColor) :
+                                    Image(systemName: Constants.bookmark.rawValue)
+                                        .foregroundColor(.black)
+                                }
                             }
-                        }
-                        .padding(EdgeInsets(top: 5,
-                                             leading: 0,
-                                             bottom: 0,
-                                             trailing: 5))
+                            .padding(EdgeInsets(top: 5,
+                                                 leading: 0,
+                                                 bottom: 0,
+                                                 trailing: 5))
 
-                        HStack {
-                            Image(systemName: Constants.starFill.rawValue)
-                                .foregroundColor(.green)
-                            Text("\(item.rating?.description ?? "")")
-                                .foregroundColor(.black)
+                            RatingStackView(rating: item.rating?.description,
+                                            ratingCount: item.userRatingCount?.description)
+                            Text(item.editorialSummary?.text ?? "")
                                 .font(.subheadline)
-                            Text("•")
-                                .foregroundColor(.black)
-                                .font(.title3)
-                            Text("(\(item.reviews ?? 0))")
                                 .foregroundColor(.secondary)
-                                .font(.subheadline)
-                        }
-                        Text(item.supportingText ?? "")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .lineLimit(2)
-                    } // VStack
+                                .lineLimit(2)
+                        } // VStack
 
-                } // HStack container
-                .padding(10)
-            } // ZStack
-        } //
+                    } // HStack container
+                    .padding(10)
+                } // ZStack
+            }
+
+
+        }
         .padding(EdgeInsets(top: 5,
                             leading: 15,
                             bottom: 10,
                             trailing: 5))
         .listRowSeparator(.hidden)
+
     }
 
     enum Constants: String {
@@ -121,6 +114,7 @@ extension RestaurantItem {
 
 struct RestaurantRowItem_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantItem(item: .make())
+        RestaurantItem(item: .generateData())
+            .environmentObject(BookmarkStore())
     }
 }
