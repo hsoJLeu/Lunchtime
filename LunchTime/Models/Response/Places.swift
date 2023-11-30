@@ -38,7 +38,7 @@ struct Place: Decodable, Identifiable {
         var text: String
     }
 
-    struct Photo: Decodable {
+    struct Photo: Decodable, Hashable {
         var name: String? // Image resource URI
     }
 }
