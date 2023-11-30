@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0087DAF2B177EAE0020E50C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DAE2B177EAE0020E50C /* Store.swift */; };
 		D0087DB12B177F560020E50C /* PlacesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DB02B177F560020E50C /* PlacesStoreTests.swift */; };
+		D0087DB92B1833BD0020E50C /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DB82B1833BD0020E50C /* RatingStackView.swift */; };
 		D0AD56AD2B0C1517006B2AB4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56AC2B0C1514006B2AB4 /* MapView.swift */; };
 		D0AD56AF2B0C8797006B2AB4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56AE2B0C8735006B2AB4 /* MainViewModel.swift */; };
 		D0AD56B32B115D77006B2AB4 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56B22B115D77006B2AB4 /* ItemDetail.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		D0087DAE2B177EAE0020E50C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D0087DB02B177F560020E50C /* PlacesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesStoreTests.swift; sourceTree = "<group>"; };
+		D0087DB82B1833BD0020E50C /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingStackView.swift; path = LunchTime/Views/RatingStackView.swift; sourceTree = "<group>"; };
 		D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D0AD56AC2B0C1514006B2AB4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D0AD56AE2B0C8735006B2AB4 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		D0C15D3C2B082822009E4C0A = {
 			isa = PBXGroup;
 			children = (
+				D0087DB82B1833BD0020E50C /* RatingStackView.swift */,
 				D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */,
 				D0C15D472B082822009E4C0A /* LunchTime */,
 				D0C15D582B082825009E4C0A /* LunchTimeTests */,
@@ -348,6 +351,7 @@
 				D0C15D4B2B082822009E4C0A /* RestaurantList.swift in Sources */,
 				D0C15D732B082A30009E4C0A /* LocationClient.swift in Sources */,
 				D0C15D7D2B083197009E4C0A /* SearchNearby.swift in Sources */,
+				D0087DB92B1833BD0020E50C /* RatingStackView.swift in Sources */,
 				D0C15D752B082AAE009E4C0A /* ApiService.swift in Sources */,
 				D0087DAF2B177EAE0020E50C /* Store.swift in Sources */,
 				D0C15D7F2B083A37009E4C0A /* Places.swift in Sources */,
