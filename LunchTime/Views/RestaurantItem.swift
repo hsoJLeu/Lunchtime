@@ -10,13 +10,13 @@ import SwiftUI
 struct RestaurantItem: View {
     @EnvironmentObject var store: BookmarkStore
     @EnvironmentObject var viewModel: MainViewModel
-    var item: Place
 
-    @Binding var isPresented: Bool
+    var item: Place
+    @Binding var selectedPlace: Place?
 
     var body: some View {
         Button {
-            self.isPresented.toggle()
+            self.selectedPlace = item
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 16, style: .circular)
@@ -112,7 +112,7 @@ extension RestaurantItem {
 struct RestaurantRowItem_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantItem(item: .generateData(),
-                       isPresented: .constant(false))
+                       selectedPlace: .constant(Place.generateData()))
             .environmentObject(BookmarkStore())
     }
 }

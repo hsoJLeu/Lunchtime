@@ -10,7 +10,7 @@ import MapKit
 
 struct MapView: View {
     @EnvironmentObject var viewModel: MainViewModel
-    @State private var isPresented: Bool = false
+    @State private var selectedPlace: Place?
     @State private var isPinSelected: Bool = false
 
     var body: some View {
@@ -20,18 +20,22 @@ struct MapView: View {
             // TODO: Show item detail only on pin selected
             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.location.latitude,
                                                              longitude: place.location.longitude)) {
-                VStack {
-                    if isPinSelected {
+                if isPinSelected {
+                    VStack {
                         RestaurantItem(item: place,
-                                       isPresented: $isPresented)
-                        .sheet(isPresented: $isPresented) {
-                            RestaurantDetailView(item: place)
-                        }
+                                       selectedPlace: $selectedPlace)
                             .foregroundColor(.black)
                             .frame(width: 300)
+                            .sheet(item: $selectedPlace) { place in
+                                RestaurantDetailView(item: place)
+                            }
+                        Image(uiImage: UIImage(named: Constants.pinSelected)!)
                     }
-
-                    Image(uiImage: UIImage(named: Constants.pinSelected)!)
+                    .onTapGesture {
+                        self.isPinSelected.toggle()
+                    }
+                } else {
+                    Image(uiImage: UIImage(named: Constants.pinResting)!)
                         .onTapGesture {
                             self.isPinSelected.toggle()
                         }
