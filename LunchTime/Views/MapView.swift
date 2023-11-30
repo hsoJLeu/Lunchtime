@@ -10,6 +10,8 @@ import MapKit
 
 struct MapView: View {
     @EnvironmentObject var viewModel: MainViewModel
+    @State private var isPresented: Bool = false
+    @State private var isPinSelected: Bool = false
 
     var body: some View {
         Map(coordinateRegion: $viewModel.currentLocation,
@@ -19,10 +21,20 @@ struct MapView: View {
             MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: place.location.latitude,
                                                              longitude: place.location.longitude)) {
                 VStack {
-                    RestaurantItem(item: place)
-                        .foregroundColor(.black)
-                        .frame(width: 300)
+                    if isPinSelected {
+                        RestaurantItem(item: place,
+                                       isPresented: $isPresented)
+                        .sheet(isPresented: $isPresented) {
+                            RestaurantDetailView(item: place)
+                        }
+                            .foregroundColor(.black)
+                            .frame(width: 300)
+                    }
+
                     Image(uiImage: UIImage(named: Constants.pinSelected)!)
+                        .onTapGesture {
+                            self.isPinSelected.toggle()
+                        }
                 }
             }
         }
