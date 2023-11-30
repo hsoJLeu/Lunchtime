@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0087DAF2B177EAE0020E50C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DAE2B177EAE0020E50C /* Store.swift */; };
 		D0087DB12B177F560020E50C /* PlacesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DB02B177F560020E50C /* PlacesStoreTests.swift */; };
+		D0087DB52B17A6700020E50C /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DB42B17A6700020E50C /* RestaurantDetailView.swift */; };
 		D0087DB92B1833BD0020E50C /* RatingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0087DB82B1833BD0020E50C /* RatingStackView.swift */; };
 		D0AD56AD2B0C1517006B2AB4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56AC2B0C1514006B2AB4 /* MapView.swift */; };
 		D0AD56AF2B0C8797006B2AB4 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD56AE2B0C8735006B2AB4 /* MainViewModel.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		D0087DAE2B177EAE0020E50C /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D0087DB02B177F560020E50C /* PlacesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesStoreTests.swift; sourceTree = "<group>"; };
+		D0087DB42B17A6700020E50C /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
 		D0087DB82B1833BD0020E50C /* RatingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingStackView.swift; path = LunchTime/Views/RatingStackView.swift; sourceTree = "<group>"; };
 		D0AD56AB2B0BFA8F006B2AB4 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D0AD56AC2B0C1514006B2AB4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				D0AD56BA2B16ED96006B2AB4 /* ListMapScreen.swift */,
 				D0C15D4A2B082822009E4C0A /* RestaurantList.swift */,
 				D0AD56B12B115BE4006B2AB4 /* RestaurantItem.swift */,
+				D0087DB42B17A6700020E50C /* RestaurantDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D0C15D7F2B083A37009E4C0A /* Places.swift in Sources */,
 				D0AD56B42B11748F006B2AB4 /* RestaurantItem.swift in Sources */,
 				D0C15D492B082822009E4C0A /* LunchTimeApp.swift in Sources */,
+				D0087DB52B17A6700020E50C /* RestaurantDetailView.swift in Sources */,
 				D0AD56AF2B0C8797006B2AB4 /* MainViewModel.swift in Sources */,
 				D0AD56AD2B0C1517006B2AB4 /* MapView.swift in Sources */,
 				D0AD56B92B14C6AE006B2AB4 /* Color+Extensions.swift in Sources */,
