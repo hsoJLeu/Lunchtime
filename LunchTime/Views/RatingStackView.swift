@@ -21,7 +21,7 @@ struct RatingStackView: View {
             Text("•")
                 .foregroundColor(.black)
                 .font(.title3)
-            Text("(\(rating ?? "0"))")
+            Text("(\(ratingCount ?? "0"))")
                 .foregroundColor(.secondary)
                 .font(.subheadline)
         }
